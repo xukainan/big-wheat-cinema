@@ -11,7 +11,7 @@ import java.util.UUID;
 @RestController
 public class CrawlerCallerController {
 
-    @DubboReference
+    @DubboReference(check = false)
     ICrawlerCaller crawlerCaller;
 
 

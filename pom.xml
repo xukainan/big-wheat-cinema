@@ -17,6 +17,18 @@
     <description>big-wheat-cinema</description>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>cinema-crawler</module>
+        <module>cinema-admin</module>
+        <module>cinema-api</module>
+        <module>cinema-dao</module>
+        <module>cinema-domain</module>
+        <module>cinema-helper</module>
+        <module>cinema-interface</module>
+        <module>cinema-model</module>
+        <module>cinema-service</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
