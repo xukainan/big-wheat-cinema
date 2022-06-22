@@ -41,6 +41,7 @@
         <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
         <dubbo.version>3.0.8</dubbo.version>
         <zkclient.version>5.2.1</zkclient.version>
+        <mybatisplus.version>3.5.2</mybatisplus.version>
     </properties>
 
     <dependencies>
@@ -91,6 +92,12 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-x-discovery</artifactId>
                 <version>${zkclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
