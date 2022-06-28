@@ -1,4 +1,4 @@
-package com.wheat.cinema.crawler;
+package com.wheat.cinema.dao.crawler;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

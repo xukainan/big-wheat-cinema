@@ -1,4 +1,4 @@
-package com.wheat.cinema.crawler;
+package com.wheat.cinema.dao.crawler;
 
 import java.util.Date;
 

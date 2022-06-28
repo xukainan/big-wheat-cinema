@@ -11,6 +11,7 @@ create table cinema_video
     update_time DATETIME default now() null,
     is_delete tinyint default 0 null,
     hits int default 0 null comment '点击量',
+    source_url varchar(50) null comment '源地址',
     video_describe varchar(2000) null,
     play_address JSON null,
     nick_name JSON null,
@@ -73,9 +74,11 @@ create table crawler_config
 (
     id int,
     crawler_name nvarchar(10) null,
-    crawler_index_url nvarchar(20) null,
+    crawler_index_url nvarchar(40) null,
     crawler_status tinyint null comment '0：停用 1：启用'
 );
+
+INSERT INTO `tcinemadev1`.`crawler_config` (`crawler_name`, `crawler_index_url`, `crawler_status`) VALUES ('努努影院', 'https://www.nunuyy1.org/', '1');
 
 create unique index crawler_config_id_uindex
     on crawler_config (id);
@@ -92,8 +95,8 @@ create table crawler_config_detail
     id int,
     config_id int null,
     config_type_id int null,
-    config_url nvarchar(30) null,
-    config_xpath nvarchar(30) null,
+    config_url nvarchar(50) null,
+    config_xpath nvarchar(50) null,
     create_time DATETIME default now() null,
     update_time DATETIME default now() null,
     is_delete tinyint default 0 null
@@ -107,6 +110,10 @@ alter table crawler_config_detail
         primary key (id);
 
 alter table crawler_config_detail modify id int auto_increment;
+
+INSERT INTO `tcinemadev1`.`crawler_config_detail` (`config_id`, `config_type_id`, `config_url`, `config_xpath`) VALUES ('1', '1', 'https://www.nunuyy1.org/dianying/', '/html/body/div[1]/div/div[2]/ul/li');
+INSERT INTO `tcinemadev1`.`crawler_config_detail` (`config_id`, `config_type_id`, `config_url`, `config_xpath`) VALUES ('1', '5', '/index_%d.html', '/html/body/div[1]/div/div[2]/ul/li');
+
 
 #############################crawler_config_type#################################
 create table crawler_config_type
@@ -123,6 +130,13 @@ alter table crawler_config_type
         primary key (id);
 
 alter table crawler_config_type modify id int auto_increment;
+
+INSERT INTO `tcinemadev1`.`crawler_config_type` (`type_name`) VALUES ('全部电影');
+INSERT INTO `tcinemadev1`.`crawler_config_type` (`type_name`) VALUES ('全部电视剧');
+INSERT INTO `tcinemadev1`.`crawler_config_type` (`type_name`) VALUES ('全部综艺');
+INSERT INTO `tcinemadev1`.`crawler_config_type` (`type_name`) VALUES ('全部动漫');
+INSERT INTO `tcinemadev1`.`crawler_config_type` (`type_name`) VALUES ('翻页');
+
 
 
 

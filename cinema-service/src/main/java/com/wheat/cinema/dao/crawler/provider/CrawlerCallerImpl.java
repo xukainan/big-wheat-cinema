@@ -1,6 +1,6 @@
-package com.wheat.cinema.crawler.provider;
+package com.wheat.cinema.dao.crawler.provider;
 
-import com.wheat.cinema.crawler.ICrawlerCaller;
+import com.wheat.cinema.dao.crawler.ICrawlerCaller;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.Date;
