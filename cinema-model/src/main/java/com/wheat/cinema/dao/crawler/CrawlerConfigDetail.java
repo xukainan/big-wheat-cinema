@@ -19,6 +19,12 @@ public class CrawlerConfigDetail {
     private String configUrl;
     @TableField("config_xpath")
     private String configXpath;
+    @TableField("config_suffix")
+    private String configSuffix;
+    @TableField("config_attribute")
+    private String configAttribute;
+    @TableField("config_regex")
+    private String configRegex;
     @TableField("config_time")
     private Date createTime;
     @TableField("config_time")
